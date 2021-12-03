@@ -1,0 +1,6 @@
+{
+    "enterYourMobileNo": "Enter your mobile number",
+    "@enterYourMobileNo": {
+      "description": "For getting user mobile number"
+    }
+}

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411320352759",
+    "project_id": "electride-5132b",
+    "storage_bucket": "electride-5132b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411320352759:android:0ed0087b9334767cacf8f2",
+        "android_client_info": {
+          "package_name": "com.electride.electride_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411320352759-6df7kvvcn2o5bog9liotbep29cvriiqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.electride.electride_user",
+            "certificate_hash": "b93764e05c57d42c8dc7a2a2cef0d8e462c5a83f"
+          }
+        },
+        {
+          "client_id": "411320352759-j8cki7ln20fpie40rgnkghu2i3nhesof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJr_GQrb34al9BFSfxyxlwqV4tY7CmwnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411320352759-j8cki7ln20fpie40rgnkghu2i3nhesof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
