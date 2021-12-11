@@ -250,7 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
     //                   Image(
     //                     height: height * 0.2,
     //                     fit: BoxFit.fill,
-    //                     image: AssetImage(
+    //                     images: AssetImage(
     //                         "assets/logo/Electride_logo_vertical_white.png"),
     //                   ),
     //                 ],
@@ -309,7 +309,7 @@ class _LoginScreenState extends State<LoginScreen> {
     //                     // ),
     //                     // Image(
     //                     //   fit: BoxFit.fill,
-    //                     //   image: AssetImage(
+    //                     //   images: AssetImage(
     //                     //       "assets/logo/Electride_logo_vertical_name.png"),
     //                     // ),
     //                     // Padding(

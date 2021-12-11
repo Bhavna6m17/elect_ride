@@ -5,6 +5,8 @@ import 'package:electride_user/Screens/OtpScreen.dart';
 import 'package:electride_user/Screens/MainScreen.dart';
 import 'package:electride_user/Screens/SplashScreen.dart';
 import 'package:electride_user/Screens/UserDetails.dart';
+import 'package:electride_user/Screens/drawer.dart';
+import 'package:electride_user/Screens/search_location.dart';
 import 'package:electride_user/widgets/Bottom_Bar.dart';
 import 'package:electride_user/widgets/common_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               // important
               supportedLocales: AppLocalizations.supportedLocales,
-              home: MainScreen(),
+              home: PickDrop(),
               //initialRoute: '/language',
               routes: <String, WidgetBuilder>{
                 LanguageSelectScreen.Route: (BuildContext context) =>
