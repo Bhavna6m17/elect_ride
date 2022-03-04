@@ -26,10 +26,10 @@ class _BottomNavState extends State<BottomNav> {
         appBar: AppBar(
           title: Text('My Flutter App'),
         ),
-        body: _children[_currentIndex], // new
+        body: _children[_currentIndex], 
         bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabTapped, // new
-          currentIndex: _currentIndex, // new
+          onTap: onTabTapped, 
+          currentIndex: _currentIndex, 
           items: [
             new BottomNavigationBarItem(
               icon: Icon(Icons.home),

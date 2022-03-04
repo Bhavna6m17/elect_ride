@@ -3,6 +3,8 @@
    <application
         android:label="electride_user"
         android:icon="@mipmap/ic_launcher">
+         <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyDB9fIeCIlPWYwhpoPMsEoYORAsng61TkY"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

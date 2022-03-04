@@ -171,11 +171,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(color: Colors.grey),
                           ),
                           TextSpan(
-                            text: " privacy poilicy",
+                            text: " \n privacy poilicy",
                             style: TextStyle(color: Colors.blue),
                           ),
                           TextSpan(
-                            text: " \n of Electride.",
+                            text: "  of Electride.",
                             style: TextStyle(color: Colors.grey),
                           ),
                         ],
