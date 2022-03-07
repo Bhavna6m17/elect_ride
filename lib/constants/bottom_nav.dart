@@ -15,36 +15,30 @@ class _BottomNavState extends State<BottomNav> {
       _currentIndex = index;
     });
   }
+
   int _currentIndex = 0;
   final List _children = [
     PickDrop(),
     DeliveryItem(),
   ];
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('My Flutter App'),
-        ),
-        body: _children[_currentIndex], 
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabTapped, 
-          currentIndex: _currentIndex, 
-          items: [
-            new BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home'),
-            ),
-            new BottomNavigationBarItem(
-              icon: Icon(Icons.mail),
-              title: Text('Messages'),
-            ),
-            new BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                title: Text('Profile')
-            )
-          ],
-        ),
-      );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Flutter App'),
+      ),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: [
+          new BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          new BottomNavigationBarItem(
+              icon: Icon(Icons.mail), label: 'Masseges'),
+          new BottomNavigationBarItem(
+              icon: Icon(Icons.person), label: 'Profile')
+        ],
+      ),
+    );
   }
+}

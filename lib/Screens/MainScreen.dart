@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
 class MainScreen extends StatefulWidget {
   static const Route = 'MainPage';
   @override
@@ -14,7 +13,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  GlobalKey<ScaffoldState> _globalKey= GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
@@ -31,58 +30,66 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Material(
-      child: Scaffold(
-        key: _globalKey,
-         // backgroundColor: Colors.white,
-          
-          drawer: MyDrawer(
+    return SafeArea(
+      child: Material(
+        child: Scaffold(
+          key: _globalKey,
+          // backgroundColor: Colors.white,
 
-          ),
-          
+          drawer: MyDrawer(),
+
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 500,
-                width: width,
                 child: Stack(
                   children: [
-                    GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-        },
-      ),
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: Container(
-                        height:40,
+                    SizedBox(
+                      height: height * 6,
+                      width: width,
+                      child: GoogleMap(
+                        mapType: MapType.hybrid,
+                        initialCameraPosition: _kGooglePlex,
+                        onMapCreated: (GoogleMapController controller) {
+                          _controller.complete(controller);
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Container(
+                        height: 40,
                         width: 40,
-                        
-                        decoration: BoxDecoration(shape: BoxShape.circle,color: kWhiteColor,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: kWhiteColor,
                         ),
                         child: GestureDetector(
-                          onTap: (){
-_globalKey.currentState.openDrawer();
+                          onTap: () {
+                            _globalKey.currentState.openDrawer();
                           },
-                          child: Icon(Icons.menu,
+                          child: Icon(
+                            Icons.menu,
                           ),
-                        ) ,
+                        ),
                       ),
-        ),
+                    ),
                   ],
                 ),
               ),
+              Container(
+                child: Text('Pickup Location'),
+              ),
+              Container(
+                child: Text('Where to go'),
+              ),
             ],
           ),
-    ),
+        ),
+      ),
     );
   }
-  //  Future<void> _goToTheLake() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  // }
 }
 
 class MyDrawer extends StatelessWidget {
@@ -149,4 +156,3 @@ class MyDrawer extends StatelessWidget {
     );
   }
 }
-

@@ -1,4 +1,3 @@
-import 'package:electride_user/Screens/Delivery_item.dart';
 import 'package:electride_user/Screens/Language_select_screen.dart';
 import 'package:electride_user/Screens/LoginScreen.dart';
 import 'package:electride_user/Screens/OtpScreen.dart';
@@ -15,6 +14,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'common.dart';
 import 'package:intl/intl.dart';
+
 Future<void> main() async {
   runApp(MyApp());
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,28 +24,27 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  MultiProvider(
-            providers: [
-              ChangeNotifierProvider<CommonWidget>(
-                  create: (_) => CommonWidget()),
-            ],
-            child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              // localizationsDelegates: AppLocalizations.localizationsDelegates,
-              // // important
-              // supportedLocales: AppLocalizations.supportedLocales,
-              home: MainScreen(),
-              //initialRoute: '/language',
-              routes: <String, WidgetBuilder>{
-                LanguageSelectScreen.Route: (BuildContext context) =>
-                    LanguageSelectScreen(),
-                LoginScreen.Route: (BuildContext context) => LoginScreen(),
-                OtpScreen.Route: (BuildContext context) => OtpScreen(),
-                MainScreen.Route: (BuildContext context) => MainScreen(),
-                UserDetails.Route: (BuildContext context) => UserDetails(),
-              },
-            ),
-          );
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CommonWidget>(create: (_) => CommonWidget()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // localizationsDelegates: AppLocalizations.localizationsDelegates,
+        // // important
+        // supportedLocales: AppLocalizations.supportedLocales,
+        home: MainScreen(),
+        //initialRoute: '/language',
+        routes: <String, WidgetBuilder>{
+          LanguageSelectScreen.Route: (BuildContext context) =>
+              LanguageSelectScreen(),
+          LoginScreen.Route: (BuildContext context) => LoginScreen(),
+          OtpScreen.Route: (BuildContext context) => OtpScreen(),
+          MainScreen.Route: (BuildContext context) => MainScreen(),
+          UserDetails.Route: (BuildContext context) => UserDetails(),
+        },
+      ),
+    );
     //   MaterialApp(
     //   debugShowCheckedModeBanner: false,
     //   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -96,8 +95,5 @@ class MyApp extends StatelessWidget {
     //     }
     //   },
     // );
-  
-  
-  
   }
 }
